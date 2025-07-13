@@ -6,8 +6,8 @@
 | `git clone <url>`          | Copy (clone) a remote repository (use this instead of `git init`) |
 | `git status`               | Show the status of changes (staged, unstaged, untracked)          |
 | `git add *`                | Stage **all** modified and new files (not recommended)            |
-| `git add <file>`           | Stage a specific **file** for the next commit                         |
-| `git add ./<path>`         | Stage a specific **path** for the next commit                |
+| `git add <file>`           | Stage a specific **file** for the next commit |
+| `git add ./<path>`         | Stage a specific **path** for the next commit |
 | `git commit -m "message"`  | Save (commit) the staged changes with a message          |
 | `git log`                  | View the history of commits                              |
 | `git diff`                 | Show changes not yet staged or committed                 |
