@@ -3,6 +3,7 @@
 1. Make sure you're in the folder that contains your `.c` files.
 
 2. Compile the files using `cc`, `gcc`, `clang`. They are equivalent.
+   
 | Part                    | Meaning                                         |
 | ----------------------- | ----------------------------------------------- |
 | `cc`, `gcc`, `clang`    | The compiler                                    |
