@@ -37,16 +37,20 @@ These allow the function to modify the original variables in main().
 
 2. Temporary Variables:
 
-```int tdiv = *a / *b;
-int tmod = *a % *b;```
+```
+int tdiv = *a / *b;
+int tmod = *a % *b;
+```
 
 We calculate the division and modulo results and store them temporarily.
 Why? Because once we change *a, we might lose the original value needed for the % operation.
 
 3. Overwriting the Original Values:
 
-```*a = tdiv;
-*b = tmod;```
+```
+*a = tdiv;
+*b = tmod;
+```
 
 Now that we’ve saved the results, we safely overwrite the original memory addresses pointed to by a and b.
 
@@ -54,8 +58,10 @@ Now that we’ve saved the results, we safely overwrite the original memory addr
 
 Without tdiv and tmod, if we did:
 
-```*a = *a / *b;
+```
+*a = *a / *b;
 *b = *a % *b; 
-// *a has already changed!```
+// *a has already changed!
+```
 
 Then the % operation would use the modified value of *a, not the original. This would give us the wrong result.
