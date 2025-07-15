@@ -4,7 +4,7 @@ When working with pointers in C, it's common to encounter situations where you n
 That’s where **temporary variables** come in. Temporary variables are used to **store intermediate values**, so you don’t lose important data during computation.
 
 ## Example: Division and Modulo with Pointers
-`#include <stdio.h>
+#include <stdio.h>
 
 void	ft_ultimate_div_mod(int *a, int *b)
 {
@@ -27,6 +27,30 @@ int main(void)
 	printf("AFTER change %d %d | address: %p %p\n", x, y, &x, &y);
 	return(0);
 }
+
+1. Function Parameters:
+`ft_ultimate_div_mod` receives two pointers: int *a and int *b.
+These allow the function to modify the original variables in main().
+
+Temporary Variables:
+
+c
+Copia
+Modifica
+int tdiv = *a / *b;
+int tmod = *a % *b;
+We calculate the division and modulo results and store them temporarily.
+Why? Because once we change *a, we might lose the original value needed for the % operation.
+
+Overwriting the Original Values:
+
+c
+Copia
+Modifica
+*a = tdiv;
+*b = tmod;
+Now that we’ve saved the results, we safely overwrite the original memory addresses pointed to by a and b.
+
 
 
 
