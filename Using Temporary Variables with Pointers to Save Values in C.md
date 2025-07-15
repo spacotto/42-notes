@@ -28,29 +28,36 @@ int main(void)
 	return(0);
 }
 
+## Explanation
 1. Function Parameters:
 `ft_ultimate_div_mod` receives two pointers: int *a and int *b.
 These allow the function to modify the original variables in main().
 
-Temporary Variables:
+2. Temporary Variables:
 
-c
-Copia
-Modifica
 int tdiv = *a / *b;
 int tmod = *a % *b;
+
 We calculate the division and modulo results and store them temporarily.
 Why? Because once we change *a, we might lose the original value needed for the % operation.
 
-Overwriting the Original Values:
+3. Overwriting the Original Values:
 
-c
-Copia
-Modifica
 *a = tdiv;
 *b = tmod;
+
 Now that we’ve saved the results, we safely overwrite the original memory addresses pointed to by a and b.
 
+## Why?
+
+Without tdiv and tmod, if we did:
+
+
+*a = *a / *b;
+*b = *a % *b; 
+// *a has already changed!
+
+Then the % operation would use the modified value of *a, not the original. This would give us the wrong result.
 
 
 
